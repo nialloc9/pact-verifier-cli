@@ -1,7 +1,7 @@
 # pact-provider
 
 <p align="center">
-  <img src="/logo.png" width="700" title="Pact provider logo">
+  <img src="/logo.png" width="200" title="Pact provider logo">
 </p>
 
 An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline. 
