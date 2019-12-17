@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "publish": "npm publish",
     "precommit": "lint-staged"
   },
   "publishConfig": {
