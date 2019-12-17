@@ -1,2 +1,2 @@
-# pact-provider-test
+# pact-provider
 An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline
