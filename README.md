@@ -17,7 +17,7 @@ This function can be published as an npm package and ran inside their pipeline m
 
 ## Usage
 
-    $ PACT_BROKER_CONTRACT_NAME=NameOfContract PACT_BROKER_TOKEN=OdvzZqCuWQEHa8zVJsmmJg PACT_BROKER_URL=https://MY_BROKER.pact.dius.com.au/ mocha -t 10000 my-pact-provider-tests.js
+    $ PACT_BROKER_CONTRACT_NAME=NameOfContract PACT_BROKER_TOKEN=XXXX PACT_BROKER_URL=https://MY_BROKER.pact.dius.com.au/ mocha -t 10000 my-pact-provider-tests.js
 
 The global variables are required.
 
