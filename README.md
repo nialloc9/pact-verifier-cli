@@ -1,4 +1,9 @@
 # pact-provider
+
+<p align="center">
+  <img src="/logo.png" width="700" title="Pact provider logo">
+</p>
+
 An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline. 
 
 To help with the buy in from other teams and to get them to integrate contract testing it is important to make it as easy as possible. To do this I have created a reusable abstraction over the provider tests to allow data sources to run just 1 function inside their pipeline to run against our consumer contracts in the broker. 
