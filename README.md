@@ -24,10 +24,10 @@ A config object can also be passed to the pact tests.
     const { onRunPactTests } = require("@nialloc9/pact-provider");
     
     const config = {};
-    
+
     onRunPactTests(config);
 
-    <details><summary>Config Options</summary>
+<details><summary>Config Options</summary>
 
 | Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
 | --------------------------- | :------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
