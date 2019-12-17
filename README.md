@@ -6,9 +6,9 @@
 
 An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline. 
 
-To help with the buy in from other teams and to get them to integrate contract testing it is important to make it as easy as possible. To do this I have created a reusable abstraction over the provider tests to allow data sources to run just 1 function inside their pipeline to run against our consumer contracts in the broker. 
+To help with the buy in from other teams and to get them to integrate contract testing it is important to make it as easy as possible. To do this pact-provider is a reusable abstraction over the provider tests to allow data sources to run just 1 function inside their pipeline to run against our consumer contracts in the broker. 
 
-This function can be published as an npm package and ran inside their pipeline making it easy to to integrate. Also this allows us to update the contract versions without having the data source update their code. Instead we can just ask them to update their version of the package (or have them always install latest).
+This allows us to update the contract versions without having the data source update their code. Instead we can just ask them to update their version of the package (or have them always install latest).
 
     // my-pact-provider-tests.js
     const { onRunPactTests } = require("@nialloc9/pact-provider");

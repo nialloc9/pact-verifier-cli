@@ -1,6 +1,6 @@
 {
   "name": "@nialloc9/pact-provider",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline",
   "main": "index.js",
   "scripts": {
