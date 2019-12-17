@@ -1,0 +1,42 @@
+{
+  "name": "@nialloc9/pact-provider",
+  "version": "1.0.0",
+  "description": "An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "publish": "npm publish",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --print-width 120 --tab-width 4 --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nialloc9/pact-provider.git"
+  },
+  "keywords": [
+    "pact",
+    "provider",
+    "tests"
+  ],
+  "author": "Niall O' Connor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nialloc9/pact-provider/issues"
+  },
+  "homepage": "https://github.com/nialloc9/pact-provider#readme",
+  "dependencies": {
+    "@pact-foundation/pact": "^9.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
+  }
+}
