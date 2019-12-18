@@ -1,25 +1,12 @@
 #!/usr/bin/env node
 
-const { onRunPactTests } = require("../lib/index");
+const { runCLI } = require("jest-cli");
 
-const {
-    contractName,
-    contractVersion,
-    applicationUrl,
-    pactBrokerUrl,
-    pactBrokerToken,
-    publishVerificationResult,
-    logLevel
-} = process.env;
-
+// Add any Jest configuration options here
 const config = {
-    contractName,
-    contractVersion,
-    applicationUrl,
-    pactBrokerUrl,
-    pactBrokerToken,
-    publishVerificationResult,
-    logLevel
+    projects: [__dirname],
+    testRegex: "pact-provider.js"
 };
 
-onRunPactTests(config);
+// Run the Jest asynchronously
+runCLI(config, [__dirname]);

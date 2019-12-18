@@ -1,14 +1,13 @@
 {
   "name": "@nialloc9/pact-provider",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
     "precommit": "lint-staged"
   },
   "bin": {
-    "pact-provider": "jest ./bin/index.js"
+    "pact-provider": "bin/index.js"
   },
   "publishConfig": {
     "access": "public"
@@ -35,7 +34,9 @@
   },
   "homepage": "https://github.com/nialloc9/pact-provider#readme",
   "dependencies": {
-    "@pact-foundation/pact": "^9.5.1"
+    "@pact-foundation/pact": "^9.5.1",
+    "jest-cli": "^24.9.0",
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
