@@ -1,6 +1,6 @@
 {
   "name": "@nialloc9/pact-provider",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline",
   "main": "lib/index.js",
   "scripts": {
@@ -25,7 +25,8 @@
   "keywords": [
     "pact",
     "provider",
-    "tests"
+    "tests",
+    "cli"
   ],
   "author": "Niall O' Connor",
   "license": "ISC",

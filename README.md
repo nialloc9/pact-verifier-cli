@@ -15,6 +15,8 @@ This allows us to update the contract versions without having the data source up
 
     $ pact-provider --contractName=NameOfContract --pactBrokerUrl=https://MY_BROKER.pact.dius.com.au/ --pactBrokerToken=XXXX
 
+When using the CLI values can be set as global variables but any value passed in on the command line will override this.
+
 <details><summary>Config CLI Options</summary>
 
 | Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
