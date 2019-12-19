@@ -11,6 +11,9 @@ To help with the buy in from other teams and to get them to integrate contract t
 This allows us to update the contract versions without having the data source update their code. Instead we can just ask them to update their version of the contract variable passed in.
 
 ## Usage CLI
+
+Start your application and have it running.
+
     $ npm i -g pact-verifier-cli
 
     $ pact-verifier --contractName=NameOfContract --pactBrokerUrl=https://MY_BROKER.pact.dius.com.au/ --pactBrokerToken=XXXX
@@ -32,6 +35,9 @@ When using the CLI values can be set as global variables but any value passed in
 </details>
 
 ## Usage Progmatically
+
+Start your application and have it running.
+
     // my-pact-provider-tests.js
     const { onRunPactTests } = require("pact-verifier-cli");
 
