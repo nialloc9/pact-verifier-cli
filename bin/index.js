@@ -4,6 +4,10 @@ const argv = require("minimist")(process.argv.slice(2));
 const { onRunPactTests } = require("../lib/index");
 const { addDefaults } = require("../lib/utils");
 
+/**
+ * @description maps errors to user friendly error
+ * @param {*} error
+ */
 const mapError = error => {
     if (error.message.includes("Invalid URL")) {
         error.message = `applicationUrl and pactBrokerUrl must be valid URL's`;

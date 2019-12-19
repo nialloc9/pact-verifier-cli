@@ -1,13 +1,13 @@
 {
-  "name": "@nialloc9/pact-provider",
-  "version": "1.1.4",
+  "name": "pact-verifier-cli",
+  "version": "1.0.1",
   "description": "An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline",
   "main": "lib/index.js",
   "scripts": {
     "precommit": "lint-staged"
   },
   "bin": {
-    "pact-provider": "bin/index.js"
+    "pact-verifier": "bin/index.js"
   },
   "publishConfig": {
     "access": "public"
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nialloc9/pact-provider.git"
+    "url": "git+https://github.com/nialloc9/pact-verifier-cli.git"
   },
   "keywords": [
     "pact",
@@ -31,20 +31,20 @@
   "author": "Niall O' Connor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nialloc9/pact-provider/issues"
+    "url": "https://github.com/nialloc9/pact-verifier-cli/issues"
   },
-  "homepage": "https://github.com/nialloc9/pact-provider#readme",
+  "homepage": "https://github.com/nialloc9/pact-verifier-cli#readme",
   "dependencies": {
-    "@pact-foundation/pact": "^9.5.1",
-    "jest-cli": "^24.9.0",
-    "minimist": "^1.2.0"
+    "@pact-foundation/pact": "9.5.1",
+    "jest-cli": "24.9.0",
+    "minimist": "1.2.0"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "eslint-config-airbnb": "^18.0.1",
-    "husky": "^3.1.0",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1"
+    "eslint": "6.7.2",
+    "eslint-config-airbnb": "18.0.1",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "lint-staged": "9.5.0",
+    "prettier": "1.19.1"
   }
 }
