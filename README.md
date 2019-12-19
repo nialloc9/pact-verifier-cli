@@ -6,9 +6,9 @@
 
 An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline. 
 
-To help with the buy in from other teams and to get them to integrate contract testing it is important to make it as easy as possible. To do this pact-verifier-cli is a reusable abstraction over the provider tests to allow data sources to run just 1 function inside their pipeline to run against our consumer contracts in the broker. 
+To help with the buy in from other teams and to get them to integrate contract testing it is important to make it as easy as possible. To do this pact-verifier-cli is a reusable abstraction over the provider tests to allow data sources to run just 1 command inside their pipeline to run against our consumer contracts in the broker. 
 
-This allows us to update the contract versions without having the data source update their code. Instead we can just ask them to update their version of the package (or have them always install latest).
+This allows us to update the contract versions without having the data source update their code. Instead we can just ask them to update their version of the contract variable passed in.
 
 ## Usage CLI
     $ npm i -g pact-verifier-cli
@@ -37,14 +37,13 @@ When using the CLI values can be set as global variables but any value passed in
 
     onRunPactTests();
 
-
     $ PACT_BROKER_CONTRACT_NAME=NameOfContract PACT_BROKER_TOKEN=XXXX PACT_BROKER_URL=https://MY_BROKER.pact.dius.com.au/ my-pact-provider-tests.js
 
 The global variables are required.
 
 ### Config Progmatically
 
-A config object can also be passed to the pact tests.
+A config object can also be passed to the pact tests. Any values passed in here will override environment variables.
 
     // my-pact-provider-tests.js
     const { onRunPactTests } = require("pact-verifier-cli");
