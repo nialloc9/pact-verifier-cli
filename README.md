@@ -10,6 +10,19 @@ To help with the buy in from other teams and to get them to integrate contract t
 
 This allows us to update the contract versions without having the data source update their code. Instead we can just ask them to update their version of the contract variable passed in.
 
+## Global Variables
+
+The pact-verifier tool can be used with global variables to define required information. This is the most common use case but can also be used with cli arguements or progamatically as outlined below.
+
+| Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
+| --------------------------- | :------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `PACT_BROKER_URL`           |   true   | string           | Running API provider host endpoint.                                                                                                                                                                                               |
+| `PACT_BROKER_CONTRACT_NAME`                  |   false   | string           | Name of the provider contract.       
+| `PACT_BROKER_TOKEN`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls.
+| `PACT_BROKER_CONTRACT_VERSION`                  |   false   | string           | Contract version. Defaults to 'latest'.       
+| `PACT_BROKER_APPLICATION_URL`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls.                                
+| `NODE_ENV`                      |  false   | dev/prod | Will set tags to ["prod"] if prod or ["dev"] if environemnt variable is dev. If you use other tag names please use the cli arguments (or progmatical arguements) to override the global variables.                                                                                                        
+
 ## Usage CLI
 
 Start your application and have it running.
@@ -24,13 +37,13 @@ When using the CLI values can be set as global variables but any value passed in
 
 | Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
 | --------------------------- | :------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `applicationUrl`           |   false   | string           | Running API provider host endpoint. e.g --applicationUrl=XXXX                                                                                                                                                                                                 |
-| `contractName`                  |   false   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME. e.g --contractName=XXXX         
-| `pactBrokerUrl`             |  false   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls. e.g --pactBrokerUrl=XXXX                                        
+| `applicationUrl`           |   true   | string           | Running API provider host endpoint. e.g --applicationUrl=XXXX                                                                                                                                                                                                 |
+| `contractName`                  |   true   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME. e.g --contractName=XXXX         
+| `pactBrokerUrl`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls. e.g --pactBrokerUrl=XXXX                                        
 | `contractTags`                      |  false   | array of strings | Array of tags, used to filter pacts from the Broker. e.g --contractTags={"dev", "prod"}                                                                                                                                |
-| `pactBrokerToken`           |  false   | string           | Bearer token for Pact Broker authentication. If using Pactflow, you likely need this option. e.g --pactBrokerToken=XXXX                                                                                                                                                   |
+| `pactBrokerToken`           |  true   | string           | Bearer token for Pact Broker authentication. If using Pactflow, you likely need this option. e.g --pactBrokerToken=XXXX                                                                                                                                                   |
 | `publishVerificationResult` |  false   | boolean          | Publish verification result to Broker --pactBrokerToken=true                                                                                                                                                                                                           | boolean |
-| `contractVersion`           |  false   | string           | Provider version, required to publish verification results to a broker --contractVersion=XXXX  
+| `contractVersion`           |  false   | string           | Contract version, required to publish verification results to a broker --contractVersion=XXXX  
 
 </details>
 
@@ -62,12 +75,12 @@ A config object can also be passed to the pact tests. Any values passed in here 
 
 | Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
 | --------------------------- | :------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `applicationUrl`           |   false   | string           | Running API provider host endpoint.                                                                                                                                                                                                    |
-| `contractName`                  |   false   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME.                 
-| `pactBrokerUrl`             |  false   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls.                                                                                                                                                                   |
+| `applicationUrl`           |   true   | string           | Running API provider host endpoint.                                                                                                                                                                                                    |
+| `contractName`                  |   true   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME.                 
+| `pactBrokerUrl`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls.                                                                                                                                                                   |
 | `contractTags`                      |  false   | array of strings | Array of tags, used to filter pacts from the Broker.                                                                                                                               |
-| `pactBrokerToken`           |  false   | string           | Bearer token for Pact Broker authentication. If using Pactflow, you likely need this option.                                                                                                                                                     |
+| `pactBrokerToken`           |  true   | string           | Bearer token for Pact Broker authentication. If using Pactflow, you likely need this option.                                                                                                                                                     |
 | `publishVerificationResult` |  false   | boolean          | Publish verification result to Broker                                                                                                                                                                                                            | boolean |
-| `contractVersion`           |  false   | string           | Provider version, required to publish verification results to a broker         
+| `contractVersion`           |  false   | string           | Contract version, required to publish verification results to a broker         
 
 </details>
