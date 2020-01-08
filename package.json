@@ -1,11 +1,12 @@
 {
   "name": "pact-verifier-cli",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline",
   "main": "lib/index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "dev": "node ./bin/index.js"
   },
   "bin": {
     "pact-verifier": "bin/index.js"
@@ -15,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn test && yarn audit"
+      "pre-push": "npm run test"
     }
   },
   "lint-staged": {

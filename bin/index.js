@@ -46,8 +46,8 @@ const main = async () => {
         logLevel
     };
 
-    const [error] = await errorHandler(onRunPactTests(addDefaults(config)));
-
+    const [error, data] = await errorHandler(onRunPactTests(addDefaults(config)));
+    console.log([error, data]);
     if (error) {
         console.error(error);
         process.exit(1);
