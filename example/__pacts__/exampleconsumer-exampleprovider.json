@@ -1,0 +1,64 @@
+{
+  "consumer": {
+    "name": "ExampleConsumer"
+  },
+  "provider": {
+    "name": "ExampleProvider"
+  },
+  "interactions": [
+    {
+      "description": "an example request",
+      "request": {
+        "method": "POST",
+        "path": "/",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": {
+          "operationName": null,
+          "query": "{\n  books {\n    title\n    author\n  }\n}\n",
+          "variables": {
+          }
+        },
+        "matchingRules": {
+          "$.body.query": {
+            "match": "regex",
+            "regex": "\\{\\s*books\\s*\\{\\s*title\\s*author\\s*\\}\\s*\\}\\s*"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "data": {
+            "books": [
+              {
+                "title": "Harry Potter and the Chamber of Secrets",
+                "author": "J.K. Rowling"
+              },
+              {
+                "title": "Jurassic Park",
+                "author": "Michael Crichton"
+              }
+            ]
+          }
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json"
+          }
+        }
+      },
+      "metadata": null
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

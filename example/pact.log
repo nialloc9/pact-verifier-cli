@@ -1,0 +1,113 @@
+I, [2020-01-08T15:25:28.272336 #86697]  INFO -- : Registered expected interaction POST /
+D, [2020-01-08T15:25:28.272670 #86697] DEBUG -- : {
+  "description": "an example request",
+  "request": {
+    "method": "POST",
+    "path": "/",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "operationName": null,
+      "query": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "{\n  books {\n    title\n    author\n  }\n}\n",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "\\{\\s*books\\s*\\{\\s*title\\s*author\\s*\\}\\s*\\}\\s*"
+          }
+        }
+      },
+      "variables": {
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "application\\/json"
+          }
+        }
+      }
+    },
+    "body": {
+      "data": {
+        "books": [
+          {
+            "title": "Harry Potter and the Chamber of Secrets",
+            "author": "J.K. Rowling"
+          },
+          {
+            "title": "Jurassic Park",
+            "author": "Michael Crichton"
+          }
+        ]
+      }
+    }
+  }
+}
+I, [2020-01-08T15:25:28.284275 #86697]  INFO -- : Received request POST /
+D, [2020-01-08T15:25:28.284408 #86697] DEBUG -- : {
+  "path": "/",
+  "query": "",
+  "method": "post",
+  "body": {
+    "operationName": null,
+    "variables": {
+    },
+    "query": "{\n  books {\n    title\n    author\n  }\n}\n"
+  },
+  "headers": {
+    "Content-Length": "93",
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "User-Agent": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)",
+    "Accept-Encoding": "gzip,deflate",
+    "Connection": "close",
+    "Host": "localhost:5000",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2020-01-08T15:25:28.284731 #86697]  INFO -- : Found matching response for POST /
+D, [2020-01-08T15:25:28.284855 #86697] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "application/json",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "application\\/json"
+        }
+      }
+    }
+  },
+  "body": {
+    "data": {
+      "books": [
+        {
+          "title": "Harry Potter and the Chamber of Secrets",
+          "author": "J.K. Rowling"
+        },
+        {
+          "title": "Jurassic Park",
+          "author": "Michael Crichton"
+        }
+      ]
+    }
+  }
+}
+I, [2020-01-08T15:25:28.290787 #86697]  INFO -- : Verifying - interactions matched
+I, [2020-01-08T15:25:28.294220 #86697]  INFO -- : Cleared interactions
+I, [2020-01-08T15:25:28.297423 #86697]  INFO -- : Writing pact for ExampleProvider to /Users/noconnor1/Desktop/niall/pact-provider/example/__pacts__/exampleconsumer-exampleprovider.json

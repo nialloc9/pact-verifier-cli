@@ -17,11 +17,11 @@ The pact-verifier tool can be used with global variables to define required info
 | Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
 | --------------------------- | :------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `PACT_BROKER_URL`           |   true   | string           | Running API provider host endpoint.                                                                                                                                                                                               |
-| `PACT_BROKER_CONTRACT_NAME`                  |   false   | string           | Name of the provider contract.       
+| `PACT_BROKER_CONTRACT_NAME`                  |   false   | string           | Name of the provider contract. Pact.io equivelant is providerName.      
 | `PACT_BROKER_TOKEN`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls.
-| `PACT_BROKER_CONTRACT_VERSION`                  |   false   | string           | Contract version. Defaults to 'latest'.       
-| `PACT_BROKER_APPLICATION_URL`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls.                                
-| `NODE_ENV`                      |  false   | dev/prod | Will set tags to ["prod"] if prod or ["dev"] if environemnt variable is dev. If you use other tag names please use the cli arguments (or progmatical arguements) to override the global variables.                                                                                                        
+| `PACT_BROKER_CONTRACT_VERSION`                  |   false   | string           | Contract version. Defaults to ^1 and uses semver. Pact.io equivelant is providerVersion.        
+| `PACT_BROKER_APPLICATION_URL`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls. Pact.io equivelant is providerBaseUrl.           
+| `NODE_ENV`                      |  false   | dev/prod | Will set contract tags to ["prod"] if prod or ["dev"] if environemnt variable is dev. If you use other tag names please use the cli arguments (or progmatical arguements) to override the global variables.                                                                                                        
 
 ## Usage CLI
 
@@ -37,13 +37,13 @@ When using the CLI values can be set as global variables but any value passed in
 
 | Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
 | --------------------------- | :------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `applicationUrl`           |   true   | string           | Running API provider host endpoint. e.g --applicationUrl=XXXX                                                                                                                                                                                                 |
-| `contractName`                  |   true   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME. e.g --contractName=XXXX         
+| `applicationUrl`           |   true   | string           | Running API provider host endpoint. Pact equivelant is providerBaseUrl. e.g --applicationUrl=XXXX                                                                                                                                                                                                 |
+| `contractName`                  |   true   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME. Pact.io equivelant is providerName. e.g --contractName=XXXX         
 | `pactBrokerUrl`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls. e.g --pactBrokerUrl=XXXX                                        
-| `contractTags`                      |  false   | array of strings | Array of tags, used to filter pacts from the Broker. e.g --contractTags={"dev", "prod"}                                                                                                                                |
+| `contractTags`                      |  false   | array of strings | Array of tags, used to filter pacts from the Broker. Pact.io equivelant is consumerVersionTag. e.g --contractTags={"dev", "prod"}                                                                                                                                |
 | `pactBrokerToken`           |  true   | string           | Bearer token for Pact Broker authentication. If using Pactflow, you likely need this option. e.g --pactBrokerToken=XXXX                                                                                                                                                   |
 | `publishVerificationResult` |  false   | boolean          | Publish verification result to Broker --pactBrokerToken=true                                                                                                                                                                                                           | boolean |
-| `contractVersion`           |  false   | string           | Contract version, required to publish verification results to a broker --contractVersion=XXXX  
+| `contractVersion`           |  false   | string           | Contract version, required to publish verification results to a broker. Pact.io equivelant is providerVersion. e.g --contractVersion=XXXX  
 
 </details>
 
@@ -75,12 +75,12 @@ A config object can also be passed to the pact tests. Any values passed in here 
 
 | Parameter                   | Required | Type             | Description                                                                                                                                                                                                                                      |
 | --------------------------- | :------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `applicationUrl`           |   true   | string           | Running API provider host endpoint.                                                                                                                                                                                                    |
-| `contractName`                  |   true   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME.                 
+| `applicationUrl`           |   true   | string           | Running API provider host endpoint. Pact equivelant is providerBaseUrl.                                                                                                                                                                                                   |
+| `contractName`                  |   true   | string           | Name of the provider contract. Overrides global variable PACT_BROKER_CONTRACT_NAME. Pact equivelant is providerName.                
 | `pactBrokerUrl`             |  true   | string           | URL of the Pact Broker to retrieve pacts from. Required if not using pactUrls.                                                                                                                                                                   |
-| `contractTags`                      |  false   | array of strings | Array of tags, used to filter pacts from the Broker.                                                                                                                               |
+| `contractTags`                      |  false   | array of strings | Array of tags, used to filter pacts from the Broker. Pact equivelant is consumerVersionTag.                                                                                                                               |
 | `pactBrokerToken`           |  true   | string           | Bearer token for Pact Broker authentication. If using Pactflow, you likely need this option.                                                                                                                                                     |
 | `publishVerificationResult` |  false   | boolean          | Publish verification result to Broker                                                                                                                                                                                                            | boolean |
-| `contractVersion`           |  false   | string           | Contract version, required to publish verification results to a broker         
+| `contractVersion`           |  false   | string           | Contract version, required to publish verification results to a broker. Pact.io equivelant is providerVersion.         
 
 </details>
