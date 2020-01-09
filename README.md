@@ -6,7 +6,7 @@
 
 An abstraction over pact.io's provider tests to hide away any complexities with integrating pact into your pipeline. 
 
-To help with the buy in from other teams and to get them to integrate contract testing it is important to make it as easy as possible. To do this pact-verifier-cli is a reusable abstraction over the provider tests to allow data sources to run just 1 command inside their pipeline to run against our consumer contracts in the broker. 
+To help with getting 'buy in' from other teams and to get them to integrate contract testing it is important to make it as easy as possible. To do this pact-verifier-cli is a reusable abstraction over the provider tests to allow data sources to run just 1 command inside their pipeline to run against our consumer contracts in the broker. 
 
 This allows us to update the contract versions without having the data source update their code. Instead we can just ask them to update their version of the contract variable passed in.
 
