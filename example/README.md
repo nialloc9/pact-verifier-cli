@@ -8,6 +8,7 @@ An example of how to use the pact-verifier-cli.
 
 ## Usage
 
+* npm install
 * Start the server i.e npm run start:test:server
 * Run the verified contract against the server and notice the test fails i.e npm run contract:test
 * Fix the regression from the contract by uncommenting the 2 lines in index.js
