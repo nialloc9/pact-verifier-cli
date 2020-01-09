@@ -7,7 +7,7 @@
     "start:test:server": "nodemon ./index.js",
     "pact:update": "node ./__pacts__/consumer.pact.js",
     "pact:publish": "pact-broker publish ./__pacts__ --consumer-app-version=1 --broker-base-url=https://twentyfirstcenturycode.pact.dius.com.au/ --broker-token=OdvzZqCuWQEHa8zVJsmmJg --tag=dev",
-    "contract:test": "pact-verifier --contractName=ExampleProvider --applicationUrl=http://localhost:4000 --pactBrokerUrl=https://twentyfirstcenturycode.pact.dius.com.au/ --pactBrokerToken=OdvzZqCuWQEHa8zVJsmmJg --logLevel=debug --contractVersion=1.0.1"
+    "contract:test": "pact-verifier --contractName=ExampleProvider --applicationUrl=http://localhost:4000 --pactBrokerUrl=https://twentyfirstcenturycode.pact.dius.com.au/ --pactBrokerToken=OdvzZqCuWQEHa8zVJsmmJg --contractVersion=1.0.1"
   },
   "author": "",
   "license": "ISC",
