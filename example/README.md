@@ -1,7 +1,7 @@
 # pact-verifier-cli
 
 <p align="center">
-  <img src="/../logo.png" width="200" title="Pact verifier logo">
+  <img src="/logo.png" width="200" title="Pact verifier logo">
 </p>
 
 An example of how to use the pact-verifier-cli.
